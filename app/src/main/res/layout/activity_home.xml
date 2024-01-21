@@ -9,37 +9,8 @@
     tools:context=".HomeActivity">
 
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardWeb"
-        android:layout_width="150dp"
-        android:layout_margin="30dp"
-        android:layout_gravity="center"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/yellow"
-        android:layout_height="150dp" >
-        <TextView
-            android:text="Web"
-            android:textSize="25dp"
-            android:layout_gravity="center"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardCamera"
-        android:layout_width="150dp"
-        app:cardCornerRadius="20dp"
-        android:layout_margin="30dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="@color/yellow"
-        android:layout_height="150dp" >
-        <TextView
-            android:text="Camera"
-            android:textSize="25dp"
-            android:layout_gravity="center"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </androidx.cardview.widget.CardView>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -1,37 +1,31 @@
 package com.example.a30daysofcode
 
-import android.content.Intent
-import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.cardview.widget.CardView
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.annotation.RequiresApi
 
 class HomeActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val webButton = findViewById<CardView>(R.id.cardWeb)
-        val cameraButton = findViewById<CardView>(R.id.cardCamera)
+        val webViewVariable = findViewById<WebView>(R.id.webView)
 
-        webButton.setOnClickListener{
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("http://www.google.com")
-            startActivity(intent)
+        webViewSetup(webViewVariable)
 
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun webViewSetup(a: WebView){
+        a.webViewClient = WebViewClient()
+        a.apply {
+            settings.javaScriptEnabled = true
+            settings.safeBrowsingEnabled = true
+            loadUrl("https://www.google.com/")
         }
-        cameraButton.setOnClickListener{
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivity(intent)
-
-        }
-
-
-
-
     }
 }
